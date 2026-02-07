@@ -94,7 +94,7 @@ public class AddAssignmentWindow extends JFrame {
                         }
                         else
                         {
-                            
+                            addSubTextField.setText("One or more fields invalid"); //so it doesn't freak 
                         }
                     }
                         
@@ -107,6 +107,19 @@ public class AddAssignmentWindow extends JFrame {
         
             JButton cancelButton = new JButton("cancel");
             Button5Panel.add(cancelButton);
+
+            class AddCancelListener implements ActionListener
+            {
+                @Override
+                public void actionPerformed(ActionEvent e) 
+                {
+                    addSubTextField.setText("");
+                    addTypeComboBox.setSelectedItem(null);
+                    addSubjComboBox.setSelectedItem(null);
+                }
+            }
+            cancelButton.addActionListener(new AddCancelListener());
+
 
              mainPanel.add(BorderLayout.CENTER, hamburgerPanel);
 

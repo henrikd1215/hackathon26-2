@@ -57,7 +57,7 @@ public class MainWindow extends JFrame {
 
 
 
-            JButton calcButton = new JButton("calc");
+            JButton calcButton = new JButton("Calculate Time");
             Button1Panel.add(calcButton);
             class CalcListener implements ActionListener
             {
@@ -75,7 +75,7 @@ public class MainWindow extends JFrame {
             calcButton.addActionListener(new CalcListener());
             
 
-            JButton addButton = new JButton("add");
+            JButton addButton = new JButton("Add Assignment");
             Button2Panel.add(addButton);
             class AddListener implements ActionListener
             {
@@ -92,12 +92,24 @@ public class MainWindow extends JFrame {
             }
             addButton.addActionListener(new AddListener());
 
-            JButton editButton = new JButton("edit");
+            JButton editButton = new JButton("Edit Assignments");
             Button3Panel.add(editButton);
+            class EditListener implements ActionListener
+            {
+                @Override
+                public void actionPerformed(ActionEvent e) 
+                {
+                    if (!EditWindow.isVisible())
+                    {
+                        EditWindow.setVisible(true);
+                    }
+                }
+            }
+            editButton.addActionListener(new EditListener());
 
-            JButton addSubButton = new JButton("add subj");
+            JButton addSubButton = new JButton("Add Subject");
             Button4Panel.add(addSubButton);
-            JTextField addSubTextField = new JTextField("bag");
+            JTextField addSubTextField = new JTextField("");
             Button4Panel.add(addSubTextField);
             class AddSubjListener implements ActionListener
             {
@@ -118,9 +130,9 @@ public class MainWindow extends JFrame {
             }
             addSubButton.addActionListener(new AddSubjListener());
 
-            JButton addTypeButton = new JButton("add type");
+            JButton addTypeButton = new JButton("Add Assignment Type");
             Button5Panel.add(addTypeButton);
-            JTextField addTypeTextField = new JTextField("bag");
+            JTextField addTypeTextField = new JTextField("");
             Button5Panel.add(addTypeTextField);
             JComboBox addTypeComboBox = new JComboBox<>();
             Button5Panel.add(addTypeComboBox);
@@ -129,7 +141,7 @@ public class MainWindow extends JFrame {
                 @Override
                 public void actionPerformed(ActionEvent e) 
                 {
-                    if (addSubTextField.getText().isEmpty())
+                    if (addTypeTextField.getText().isEmpty())
                     {
                         addTypeTextField.setText("Invalid or empty assignment type.");
                     }

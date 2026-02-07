@@ -25,17 +25,17 @@ public class EditAssignmentWindow extends JFrame {
             list3Panel.setLayout(new GridLayout(2,1));
 
 
-            JLabel subjLabel = new JLabel("subj");
+            JLabel subjLabel = new JLabel("Subject");
             list1Panel.add(subjLabel);
             JComboBox subjComboBox = new JComboBox<>();
             list1Panel.add(subjComboBox);
 
-            JLabel typeLabel = new JLabel("type");
+            JLabel typeLabel = new JLabel("Type");
             list2Panel.add(typeLabel);
             JComboBox typeComboBox = new JComboBox<>();
             list2Panel.add(typeComboBox);
 
-            JLabel assiLabel = new JLabel("assignment");
+            JLabel assiLabel = new JLabel("Assignment");
             list3Panel.add(assiLabel);
             JComboBox assiComboBox = new JComboBox<>();
             list3Panel.add(assiComboBox);
