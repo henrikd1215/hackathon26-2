@@ -4,7 +4,7 @@ public class Subject {
     ArrayList<SimilarAssignments> assignmentTypes;
     String name;
 
-    public int id;
+    public final int id;
     public static int nextId;
 
     public Subject(String name) {

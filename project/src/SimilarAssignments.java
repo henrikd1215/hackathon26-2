@@ -4,7 +4,7 @@ public class SimilarAssignments {
     ArrayList<Assignment> assignments = new ArrayList<>();
     String name;
 
-    public int id;
+    public final int id;
     public static int nextId;
 
     public SimilarAssignments(String name) {
