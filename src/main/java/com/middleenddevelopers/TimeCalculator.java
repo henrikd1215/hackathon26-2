@@ -52,4 +52,6 @@ public class TimeCalculator {
     public static double findTPQSTD(SimilarAssignments assignments) {
         return Math.pow(findTPQVariance(assignments), .5);
     }
+
+    
 }
