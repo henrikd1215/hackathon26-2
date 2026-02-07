@@ -64,13 +64,6 @@ public class MainWindow extends JFrame {
             JComboBox addTypeComboBox = new JComboBox<>();
             Button5Panel.add(addTypeComboBox);
 
-            SubjectsHandler.subjects.add(new Subject("AWESOME fortnite"));
-            SubjectsHandler.subjects.add(new Subject("AWESOME fortnite"));
-            SubjectsHandler.subjects.add(new Subject("AWESOME fortnite"));
-            SubjectsHandler.subjects.add(new Subject("AWESOME fortnite"));
-            SubjectsHandler.subjects.add(new Subject("AWESOME fortnite"));
-            SubjectsHandler.subjects.add(new Subject("AWESOME fortnite"));
-
             for (Subject s: SubjectsHandler.subjects)
             {
                addTypeComboBox.addItem(s.name);
@@ -88,7 +81,6 @@ public class MainWindow extends JFrame {
             
 
             mainPanel.add(BorderLayout.CENTER, hamburgerPanel);
-
 
             this.setContentPane(mainPanel);
 

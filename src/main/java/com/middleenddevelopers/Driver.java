@@ -22,7 +22,7 @@ public class Driver {
         subjectsHandler.subjects.add(new Subject("Test"));
 
 
-        MainWindow primaryWindow = new MainWindow("Homework Time Calculator");
+        AddAssignmentWindow primaryWindow = new AddAssignmentWindow("Homework Time Calculator");
 
         primaryWindow.setSize(800, 500);
         primaryWindow.setLocation(500,200);
