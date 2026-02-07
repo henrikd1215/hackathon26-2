@@ -3,12 +3,12 @@ import java.awt.BorderLayout;
 import java.awt.Font;
 import java.awt.GridLayout;
 
-import javax.swing.BoxLayout;
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.JTextField;
+import javax.swing.*;
+
+import java.util.ArrayList;
+
 public class MainWindow extends JFrame {
+    ArrayList<String> stringlist = new ArrayList<>();
         public MainWindow(String title) {
             super(title);
 
@@ -54,9 +54,15 @@ public class MainWindow extends JFrame {
 
             JButton addSubButton = new JButton("add subj");
             Button4Panel.add(addSubButton);
+            JTextField addSubTextField = new JTextField("bag");
+            Button4Panel.add(addSubTextField);
 
             JButton addTypeButton = new JButton("add type");
             Button5Panel.add(addTypeButton);
+            JTextField addTypeTextField = new JTextField("bag");
+            Button5Panel.add(addTypeTextField);
+            JComboBox addTypeComboBox = new JComboBox<>();
+            Button5Panel.add(addTypeComboBox);
             
         
             
@@ -67,7 +73,7 @@ public class MainWindow extends JFrame {
             
             
 
-            mainPanel.add(BorderLayout.WEST, hamburgerPanel);
+            mainPanel.add(BorderLayout.CENTER, hamburgerPanel);
 
 
             this.setContentPane(mainPanel);
