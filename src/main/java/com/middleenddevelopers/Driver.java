@@ -6,17 +6,29 @@ import com.fasterxml.jackson.core.*;
 
 public class Driver {
     public static void main(String[] args) {
+        ObjectMapper mapper = new ObjectMapper();
+        File f = new File("Assignments.json");
+
+        //SubjectsHandler subjectsHandler = new SubjectsHandler();
+        SubjectsHandler subjectsHandler;
+        try {
+            subjectsHandler = mapper.readValue(f, SubjectsHandler.class);
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+            subjectsHandler = new SubjectsHandler();
+        }
+
+
+        subjectsHandler.subjects.add(new Subject("Test"));
+
+
         MainWindow primaryWindow = new MainWindow("Homework Time Calculator");
 
         primaryWindow.setSize(800, 500);
         primaryWindow.setLocation(500,200);
         primaryWindow.setVisible(true);
 
-        SubjectsHandler subjectsHandler = new SubjectsHandler();
-        ObjectMapper mapper = new ObjectMapper();
-        File f = new File("Assignments.json");
 
-        subjectsHandler.subjects.add(new Subject("Test"));
 
         try {
             mapper.writeValue(f, subjectsHandler);
