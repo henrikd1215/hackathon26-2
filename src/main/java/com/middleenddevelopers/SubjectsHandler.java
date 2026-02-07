@@ -1,14 +1,19 @@
 package com.middleenddevelopers;
 import java.util.ArrayList;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class SubjectsHandler {
     @JsonProperty("subjects")
-    static ArrayList<Subject> subjects = new ArrayList<>();
+    public static ArrayList<Subject> subjects = new ArrayList<>();
+    public ArrayList<Subject> getSubjects() {
+        return subjects;
+    }
 
     public SubjectsHandler() {}
 
+    @JsonIgnore
     public String[] getSubjectNames() {
         String[] names = new String[subjects.size()];
         for (int i = 0; i < subjects.size(); i++) {

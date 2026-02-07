@@ -1,13 +1,13 @@
 package com.middleenddevelopers;
 
-import java.io.*;
-import com.fasterxml.jackson.databind.*;
-import com.fasterxml.jackson.core.*;
+import java.io.File;
+
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 public class Driver {
     public static void main(String[] args) {
         ObjectMapper mapper = new ObjectMapper();
-        mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+        //mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
 
         File f = new File("Assignments.json");
 
@@ -25,6 +25,7 @@ public class Driver {
 
 
         subjectsHandler.subjects.add(new Subject("Test 2"));
+        System.out.print(subjectsHandler.subjects.size());
 
 
         AddAssignmentWindow primaryWindow = new AddAssignmentWindow("Homework Time Calculator");
@@ -38,6 +39,7 @@ public class Driver {
         try {
             mapper.writeValue(f, subjectsHandler);
         } catch (Exception e) {
+            System.out.println(e.getMessage());
         }
     }
 }
