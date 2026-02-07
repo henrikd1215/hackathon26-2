@@ -63,6 +63,20 @@ public class MainWindow extends JFrame {
             Button5Panel.add(addTypeTextField);
             JComboBox addTypeComboBox = new JComboBox<>();
             Button5Panel.add(addTypeComboBox);
+
+            SubjectsHandler.subjects.add(new Subject("AWESOME fortnite"));
+            SubjectsHandler.subjects.add(new Subject("AWESOME fortnite"));
+            SubjectsHandler.subjects.add(new Subject("AWESOME fortnite"));
+            SubjectsHandler.subjects.add(new Subject("AWESOME fortnite"));
+            SubjectsHandler.subjects.add(new Subject("AWESOME fortnite"));
+            SubjectsHandler.subjects.add(new Subject("AWESOME fortnite"));
+
+            for (Subject s: SubjectsHandler.subjects)
+            {
+               addTypeComboBox.addItem(s.name);
+            }
+
+
             
         
             
