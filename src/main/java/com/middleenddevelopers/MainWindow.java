@@ -15,6 +15,19 @@ public class MainWindow extends JFrame {
 
             setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
+            AddAssignmentWindow AddWindow = new AddAssignmentWindow("Homework Time Calculator");
+
+            AddWindow.setSize(800, 500);
+            AddWindow.setLocation(500,200);
+            AddWindow.setVisible(false);
+
+
+            EditAssignmentWindow EditWindow = new EditAssignmentWindow("Homework Time Calculator");
+
+            EditWindow.setSize(800, 500);
+            EditWindow.setLocation(500,200);
+            EditWindow.setVisible(false);
+
             JPanel mainPanel = new JPanel();
             mainPanel.setLayout(new BorderLayout());
 
@@ -51,12 +64,13 @@ public class MainWindow extends JFrame {
                 @Override
                 public void actionPerformed(ActionEvent e) 
                 {
-                    if (!AddAssignmentWindow.isVisible()) //Make sure the window isn't already open
+                    if (!AddWindow.isVisible()) //Make sure the window isn't already open
                     {
-                        AddAssignmentWindow.setVisible(true); //Make the window visible otherwise
+                        AddWindow.setVisible(true); //Make the window visible otherwise
                     }
                 }
             }
+            calcButton.addActionListener(new CalcListener());
             
 
             JButton addButton = new JButton("add");
