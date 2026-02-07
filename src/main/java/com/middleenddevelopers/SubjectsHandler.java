@@ -51,10 +51,4 @@ public class SubjectsHandler {
     public double calculateAssignmentTime(int subjectIndex, int assignmentTypeIndex, int assignmentIndex) {
         return TimeCalculator.calculateTime(subjects.get(subjectIndex).getAssignment(assignmentTypeIndex, assignmentIndex), subjects.get(subjectIndex).getAssignmentType(assignmentTypeIndex));
     }
-
-
-
-    public void saveToJson(JsonWriter jsonWriter) {
-
-    }
 }
