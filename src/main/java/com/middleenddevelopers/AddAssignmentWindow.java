@@ -4,14 +4,17 @@ import java.awt.Font;
 import java.awt.GridLayout;
 
 import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import java.util.ArrayList;
 
 public class AddAssignmentWindow extends JFrame {
 
-    ArrayList<String> stringlist = new ArrayList<>();
-     static JButton addElementButton = new JButton("add");
-            
+        ArrayList<String> stringlist = new ArrayList<>();
+        static JButton addElementButton = new JButton("add");
+        static JLabel infoLabel = new JLabel("IDK MAN");    
+        static boolean timerRunning = false;
         public static void changeAddText(String changeText)
             {
             addElementButton.setText(changeText);
@@ -47,7 +50,7 @@ public class AddAssignmentWindow extends JFrame {
             Button5Panel.setLayout(new GridLayout(1,2));
             hamburgerPanel.add(Button5Panel);
 
-            JLabel infoLabel = new JLabel("IDK MAN");
+            
             Button1Panel.add(infoLabel);
 
             JLabel subjLabel = new JLabel("Subject");
@@ -66,6 +69,38 @@ public class AddAssignmentWindow extends JFrame {
             Button4Panel.add(addSubTextField);
 
             Button5Panel.add(addElementButton);
+            class AddElementListener implements ActionListener
+            {
+                @Override
+                public void actionPerformed(ActionEvent e) 
+                {
+                    if (addElementButton.getText().equals("Calculate"))
+                    {
+                        if (addSubTextField.getText().isEmpty() || addTypeComboBox.getSelectedItem() == null || addSubjComboBox.getSelectedItem() == null)
+                        {
+                            addSubTextField.setText("One or more fields invalid");
+                        }
+                        else
+                        {
+                            //do the math
+                        }
+                    }
+                    
+                    else //addsubj
+                    {
+                        if (addSubTextField.getText().isEmpty() || addTypeComboBox.getSelectedItem() == null || addSubjComboBox.getSelectedItem() == null)
+                        {
+                            addSubTextField.setText("One or more fields invalid");
+                        }
+                        else
+                        {
+                            
+                        }
+                    }
+                        
+                }
+            }
+            //addElementButton.addActionListener(new AddSubjListener());
 
             
 

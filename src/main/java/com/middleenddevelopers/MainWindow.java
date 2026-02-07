@@ -67,6 +67,8 @@ public class MainWindow extends JFrame {
                     if (!AddWindow.isVisible()) //Make sure the window isn't already open
                     {
                         AddWindow.setVisible(true); //Make the window visible otherwise
+                        AddWindow.changeAddText("Calculate");
+                        AddWindow.infoLabel.setText("Calculate the time an assignment will take.");
                     }
                 }
             }
@@ -83,7 +85,8 @@ public class MainWindow extends JFrame {
                     if (!AddWindow.isVisible())
                     {
                         AddWindow.setVisible(true);
-                        AddWindow.changeAddText("fat");
+                        AddWindow.changeAddText("Add Assignment");
+                        AddWindow.infoLabel.setText("Add assignments here. All fields must be filled");
                     }
                 }
             }
@@ -96,6 +99,24 @@ public class MainWindow extends JFrame {
             Button4Panel.add(addSubButton);
             JTextField addSubTextField = new JTextField("bag");
             Button4Panel.add(addSubTextField);
+            class AddSubjListener implements ActionListener
+            {
+                @Override
+                public void actionPerformed(ActionEvent e) 
+                {
+                    if (addSubTextField.getText().isEmpty())
+                    {
+                        addSubTextField.setText("Invalid or empty subject.");
+                    }
+                    else
+                    {
+                        Subject subjHolder = new Subject(addSubTextField.getText());
+                        addSubTextField.setText("Success! Subject "+addSubTextField.getText()+" was added");
+                        //SubjectsHandler.add(subjHolder);
+                    }
+                }
+            }
+            addSubButton.addActionListener(new AddSubjListener());
 
             JButton addTypeButton = new JButton("add type");
             Button5Panel.add(addTypeButton);
@@ -103,6 +124,28 @@ public class MainWindow extends JFrame {
             Button5Panel.add(addTypeTextField);
             JComboBox addTypeComboBox = new JComboBox<>();
             Button5Panel.add(addTypeComboBox);
+            class AddTypeListener implements ActionListener
+            {
+                @Override
+                public void actionPerformed(ActionEvent e) 
+                {
+                    if (addSubTextField.getText().isEmpty())
+                    {
+                        addTypeTextField.setText("Invalid or empty assignment type.");
+                    }
+                    else if (addTypeComboBox.getSelectedItem() == null)
+                    {
+                        addTypeTextField.setText("Invalid or empty subject.");
+                    }
+                    else
+                    {
+                        Subject subjHolder = new Subject(addTypeTextField.getText());
+                        addTypeTextField.setText("Assignment type "+addSubTextField.getText()+" added to subject "+addTypeComboBox.getSelectedItem());
+                        //SubjectsHandler.add(subjHolder);
+                    }
+                }
+            }
+            addTypeButton.addActionListener(new AddTypeListener());
 
             for (Subject s: SubjectsHandler.subjects)
             {
