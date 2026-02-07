@@ -6,7 +6,6 @@ public class Driver {
 
         primaryWindow.setSize(800, 500);
         primaryWindow.setLocation(500,200);
-        primaryWindow.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         primaryWindow.setVisible(true);
     }
 }

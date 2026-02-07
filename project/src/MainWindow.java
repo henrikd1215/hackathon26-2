@@ -8,7 +8,18 @@ public class MainWindow extends JFrame {
 
             JPanel mainPanel = new JPanel();
             mainPanel.setLayout(new BorderLayout());
-            
+
+            JPanel hamburgerPanel = new JPanel();
+            hamburgerPanel.setLayout(new BoxLayout(hamburgerPanel, 1));
+
+            JButton button1 = new JButton("AAAGHH IM SCREAMING!!!");
+            hamburgerPanel.add(button1);
+
+            mainPanel.add(BorderLayout.WEST, hamburgerPanel);
+
+
+            this.setContentPane(mainPanel);
+
             
         }
 }
