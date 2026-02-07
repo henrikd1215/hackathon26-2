@@ -26,11 +26,11 @@ public class TimeCalculator {
         }
     }
 
-    private double findTPQVariance(SimilarAssignments assignments) {
+    public static double findTPQVariance(SimilarAssignments assignments) {
         ArrayList<Double> timePerQuestions = new ArrayList<>();
 
         for (Assignment assignment : assignments.assignments) {
-            timePerQuestions.add(assignment.questions / assignment.time);
+            timePerQuestions.add(assignment.time / assignment.questions);
         }
 
         Double mean = 0.0;
@@ -46,5 +46,9 @@ public class TimeCalculator {
         variance = variance / (timePerQuestions.size() - 1);
 
         return variance;
+    }
+
+    public static double findTPQSTD(SimilarAssignments assignments) {
+        return Math.pow(findTPQVariance(assignments), .5);
     }
 }
