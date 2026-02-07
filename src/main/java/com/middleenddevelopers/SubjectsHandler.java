@@ -2,7 +2,7 @@ package com.middleenddevelopers;
 import java.util.ArrayList;
 
 public class SubjectsHandler {
-    ArrayList<Subject> subjects = new ArrayList<>();
+    static ArrayList<Subject> subjects = new ArrayList<>();
 
     public String[] getSubjectNames() {
         String[] names = new String[subjects.size()];
