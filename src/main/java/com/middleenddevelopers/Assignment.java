@@ -12,6 +12,7 @@ public class Assignment {
         this.isCompleted = isCompleted;
         this.time = time;
         this.questions = questions;
+        this.name = name;
 
         id = nextId;
         nextId++;

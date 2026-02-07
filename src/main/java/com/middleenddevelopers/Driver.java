@@ -7,6 +7,8 @@ import com.fasterxml.jackson.core.*;
 public class Driver {
     public static void main(String[] args) {
         ObjectMapper mapper = new ObjectMapper();
+        mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+
         File f = new File("Assignments.json");
 
         //SubjectsHandler subjectsHandler = new SubjectsHandler();

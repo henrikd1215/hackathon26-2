@@ -2,7 +2,7 @@ package com.middleenddevelopers;
 import java.util.ArrayList;
 
 public class Subject {
-    public ArrayList<SimilarAssignments> assignmentTypes;
+    public ArrayList<SimilarAssignments> assignmentTypes = new ArrayList<>();
     public String name;
 
     public final int id;
