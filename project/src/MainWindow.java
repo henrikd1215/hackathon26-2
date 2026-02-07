@@ -12,8 +12,13 @@ public class MainWindow extends JFrame {
             JPanel hamburgerPanel = new JPanel();
             hamburgerPanel.setLayout(new BoxLayout(hamburgerPanel, 1));
 
-            JButton button1 = new JButton("AAAGHH IM SCREAMING!!!");
-            hamburgerPanel.add(button1);
+            for (int i = 0; i < 10; i++)
+            {
+                JButton button1 = new JButton("AAAGHH IM SCREAMING!!!");
+                button1.setFont(new Font("Comic Sans", Font.PLAIN, 40));
+                hamburgerPanel.add(button1);
+            }
+            
 
             mainPanel.add(BorderLayout.WEST, hamburgerPanel);
 
