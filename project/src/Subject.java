@@ -13,4 +13,16 @@ public class Subject {
         id = nextId;
         nextId++;
     }
+
+    public SimilarAssignments getAssignmentType(int assignmentTypeIndex) {
+        return assignmentTypes.get(assignmentTypeIndex);
+    }
+
+    public Assignment getAssignment(int assignmentTypeIndex, int assignmentIndex) {
+        return assignmentTypes.get(assignmentTypeIndex).getAssignment(assignmentIndex);
+    }
+
+    public int size() {
+        return assignmentTypes.size();
+    }
 }

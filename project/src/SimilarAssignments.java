@@ -13,4 +13,8 @@ public class SimilarAssignments {
         id = nextId;
         nextId++;
     }
+
+    public Assignment getAssignment(int assignmentIndex) {
+        return assignments.get(assignmentIndex);
+    }
 }
