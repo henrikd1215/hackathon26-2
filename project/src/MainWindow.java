@@ -12,12 +12,42 @@ public class MainWindow extends JFrame {
             JPanel hamburgerPanel = new JPanel();
             hamburgerPanel.setLayout(new BoxLayout(hamburgerPanel, 1));
 
-            for (int i = 0; i < 10; i++)
-            {
-                JButton button1 = new JButton("AAAGHH IM SCREAMING!!!");
-                button1.setFont(new Font("Comic Sans", Font.PLAIN, 40));
-                hamburgerPanel.add(button1);
-            }
+            
+            JButton buttonCalc = new JButton("Calculate");
+            buttonCalc.setFont(new Font("Arial", Font.PLAIN, 25));
+            hamburgerPanel.add(buttonCalc);
+
+            JButton buttonEdit = new JButton("Edit Assignment List");
+            buttonEdit.setFont(new Font("Arial", Font.PLAIN, 25));
+            hamburgerPanel.add(buttonEdit);
+
+            JButton buttonAdd = new JButton("Add Assignments");
+            buttonAdd.setFont(new Font("Arial", Font.PLAIN, 25));
+            hamburgerPanel.add(buttonAdd);
+
+            JPanel AddSubjPanel = new JPanel();
+            AddSubjPanel.setLayout(new GridLayout(1, 2));
+
+            //add
+            JButton buttonAddSubj = new JButton("Add Subject");
+            buttonAdd.setFont(new Font("Arial", Font.PLAIN, 20));
+            AddSubjPanel.add(buttonAdd);
+
+            JTextField textFieldAddSubj = new JTextField("fart", 3);
+            AddSubjPanel.add(textFieldAddSubj);
+
+
+            hamburgerPanel.add(AddSubjPanel);
+
+
+
+
+
+            JPanel AddTypePanel = new JPanel();
+            AddTypePanel.setLayout(new BoxLayout(AddTypePanel, 0));
+
+
+            
             
 
             mainPanel.add(BorderLayout.WEST, hamburgerPanel);
