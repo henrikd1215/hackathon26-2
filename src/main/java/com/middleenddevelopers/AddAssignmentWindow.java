@@ -4,15 +4,24 @@ import java.awt.Font;
 import java.awt.GridLayout;
 
 import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import java.util.ArrayList;
 
 public class AddAssignmentWindow extends JFrame {
-    ArrayList<String> stringlist = new ArrayList<>();
+
+        ArrayList<String> stringlist = new ArrayList<>();
+        static JButton addElementButton = new JButton("add");
+        static JLabel infoLabel = new JLabel("IDK MAN");    
+        static boolean timerRunning = false;
+        public static void changeAddText(String changeText)
+            {
+            addElementButton.setText(changeText);
+            }
+
         public AddAssignmentWindow(String title) {
             super(title);
-
-            setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
             JPanel mainPanel = new JPanel();
             mainPanel.setLayout(new BorderLayout());
@@ -41,7 +50,7 @@ public class AddAssignmentWindow extends JFrame {
             Button5Panel.setLayout(new GridLayout(1,2));
             hamburgerPanel.add(Button5Panel);
 
-            JLabel infoLabel = new JLabel("IDK MAN");
+            
             Button1Panel.add(infoLabel);
 
             JLabel subjLabel = new JLabel("Subject");
@@ -59,17 +68,65 @@ public class AddAssignmentWindow extends JFrame {
             JTextField addSubTextField = new JTextField("bag");
             Button4Panel.add(addSubTextField);
 
+            Button5Panel.add(addElementButton);
+            class AddElementListener implements ActionListener
+            {
+                @Override
+                public void actionPerformed(ActionEvent e) 
+                {
+                    if (addElementButton.getText().equals("Calculate"))
+                    {
+                        if (addSubTextField.getText().isEmpty() || addTypeComboBox.getSelectedItem() == null || addSubjComboBox.getSelectedItem() == null)
+                        {
+                            addSubTextField.setText("One or more fields invalid");
+                        }
+                        else
+                        {
+                            //do the math
+                        }
+                    }
+                    
+                    else //addsubj
+                    {
+                        if (addSubTextField.getText().isEmpty() || addTypeComboBox.getSelectedItem() == null || addSubjComboBox.getSelectedItem() == null)
+                        {
+                            addSubTextField.setText("One or more fields invalid");
+                        }
+                        else
+                        {
+                            addSubTextField.setText("One or more fields invalid"); //so it doesn't freak 
+                        }
+                    }
+                        
+                }
+            }
+            //addElementButton.addActionListener(new AddSubjListener());
+
             
 
-            JButton addButton = new JButton("add");
-            Button5Panel.add(addButton);
+        
             JButton cancelButton = new JButton("cancel");
             Button5Panel.add(cancelButton);
+
+            class AddCancelListener implements ActionListener
+            {
+                @Override
+                public void actionPerformed(ActionEvent e) 
+                {
+                    addSubTextField.setText("");
+                    addTypeComboBox.setSelectedItem(null);
+                    addSubjComboBox.setSelectedItem(null);
+                }
+            }
+            cancelButton.addActionListener(new AddCancelListener());
+
 
              mainPanel.add(BorderLayout.CENTER, hamburgerPanel);
 
             this.setContentPane(mainPanel);
         }
+
+        
 }
 
 //for tomorrow me; this window will also be used for time calc, just check the text on the button to determine behavior
