@@ -8,12 +8,17 @@ import javax.swing.*;
 import java.util.ArrayList;
 
 public class AddAssignmentWindow extends JFrame {
+
     ArrayList<String> stringlist = new ArrayList<>();
+     static JButton addElementButton = new JButton("add");
+            
+        public static void changeAddText(String changeText)
+            {
+            addElementButton.setText(changeText);
+            }
 
         public AddAssignmentWindow(String title) {
             super(title);
-
-            setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
             JPanel mainPanel = new JPanel();
             mainPanel.setLayout(new BorderLayout());
@@ -60,10 +65,11 @@ public class AddAssignmentWindow extends JFrame {
             JTextField addSubTextField = new JTextField("bag");
             Button4Panel.add(addSubTextField);
 
+            Button5Panel.add(addElementButton);
+
             
 
-            JButton addButton = new JButton("add");
-            Button5Panel.add(addButton);
+        
             JButton cancelButton = new JButton("cancel");
             Button5Panel.add(cancelButton);
 
@@ -71,6 +77,8 @@ public class AddAssignmentWindow extends JFrame {
 
             this.setContentPane(mainPanel);
         }
+
+        
 }
 
 //for tomorrow me; this window will also be used for time calc, just check the text on the button to determine behavior

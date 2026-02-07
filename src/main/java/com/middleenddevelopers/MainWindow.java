@@ -75,6 +75,19 @@ public class MainWindow extends JFrame {
 
             JButton addButton = new JButton("add");
             Button2Panel.add(addButton);
+            class AddListener implements ActionListener
+            {
+                @Override
+                public void actionPerformed(ActionEvent e) 
+                {
+                    if (!AddWindow.isVisible())
+                    {
+                        AddWindow.setVisible(true);
+                        AddWindow.changeAddText("fat");
+                    }
+                }
+            }
+            addButton.addActionListener(new AddListener());
 
             JButton editButton = new JButton("edit");
             Button3Panel.add(editButton);
