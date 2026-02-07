@@ -1,8 +1,8 @@
 import java.util.ArrayList;
 
 public class SimilarAssignments {
-    ArrayList<Assignment> assignments = new ArrayList<>();
-    String name;
+    public ArrayList<Assignment> assignments = new ArrayList<>();
+    public String name;
 
     public final int id;
     public static int nextId;
