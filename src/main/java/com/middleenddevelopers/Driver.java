@@ -2,7 +2,7 @@ package com.middleenddevelopers;
 
 public class Driver {
     public static void main(String[] args) {
-        MainWindow primaryWindow = new MainWindow("Homework Time Calculator");
+        AddAssignmentWindow primaryWindow = new AddAssignmentWindow("Homework Time Calculator");
 
         primaryWindow.setSize(800, 500);
         primaryWindow.setLocation(500,200);
