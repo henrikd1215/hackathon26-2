@@ -35,12 +35,26 @@ public class Driver {
         subjectsHandler.subjects.add(mathSubject);
 
 
-        AddAssignmentWindow primaryWindow = new AddAssignmentWindow("Homework Time Calculator");
+        MainWindow primaryWindow = new MainWindow("Homework Time Calculator");
 
         primaryWindow.setSize(800, 500);
         primaryWindow.setLocation(500,200);
         primaryWindow.setVisible(true);
+        
+        AddAssignmentWindow AddWindow = new AddAssignmentWindow("Homework Time Calculator");
 
+        AddWindow.setSize(800, 500);
+        AddWindow.setLocation(500,200);
+        AddWindow.setVisible(false);
+
+
+        EditAssignmentWindow EditWindow = new EditAssignmentWindow("Homework Time Calculator");
+
+        EditWindow.setSize(800, 500);
+        EditWindow.setLocation(500,200);
+        EditWindow.setVisible(false);
+
+                    
 
 
 //region Save to JSON

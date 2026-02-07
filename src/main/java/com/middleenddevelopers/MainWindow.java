@@ -2,7 +2,8 @@ package com.middleenddevelopers;
 import java.awt.BorderLayout;
 import java.awt.Font;
 import java.awt.GridLayout;
-
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import javax.swing.*;
 
 import java.util.ArrayList;
@@ -45,6 +46,18 @@ public class MainWindow extends JFrame {
 
             JButton calcButton = new JButton("calc");
             Button1Panel.add(calcButton);
+            class CalcListener implements ActionListener
+            {
+                @Override
+                public void actionPerformed(ActionEvent e) 
+                {
+                    if (!AddAssignmentWindow.isVisible()) //Make sure the window isn't already open
+                    {
+                        AddAssignmentWindow.setVisible(true); //Make the window visible otherwise
+                    }
+                }
+            }
+            
 
             JButton addButton = new JButton("add");
             Button2Panel.add(addButton);

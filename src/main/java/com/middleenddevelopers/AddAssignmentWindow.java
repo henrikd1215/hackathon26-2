@@ -9,6 +9,8 @@ import java.util.ArrayList;
 
 public class AddAssignmentWindow extends JFrame {
     ArrayList<String> stringlist = new ArrayList<>();
+    public static boolean isWindowVisible = false;
+
         public AddAssignmentWindow(String title) {
             super(title);
 
