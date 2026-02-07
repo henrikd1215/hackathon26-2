@@ -21,36 +21,45 @@ public class MainWindow extends JFrame {
             hamburgerPanel.setLayout(new BoxLayout(hamburgerPanel, 1));
 
             
-            JButton buttonCalc = new JButton("Calculate");
-            buttonCalc.setFont(new Font("Arial", Font.PLAIN, 25));
-            hamburgerPanel.add(buttonCalc);
+            JPanel Button1Panel = new JPanel();
+            Button1Panel.setLayout(new GridLayout(1,1));
+            hamburgerPanel.add(Button1Panel);
 
-            JButton buttonEdit = new JButton("Edit Assignment List");
-            buttonEdit.setFont(new Font("Arial", Font.PLAIN, 25));
-            hamburgerPanel.add(buttonEdit);
+            JPanel Button2Panel = new JPanel();
+            Button2Panel.setLayout(new GridLayout(1,1));
+            hamburgerPanel.add(Button2Panel);
 
-            JButton buttonAdd = new JButton("Add Assignments");
-            buttonAdd.setFont(new Font("Arial", Font.PLAIN, 25));
-            hamburgerPanel.add(buttonAdd);
+            JPanel Button3Panel = new JPanel();
+            Button3Panel.setLayout(new GridLayout(1,1));
+            hamburgerPanel.add(Button3Panel);
 
-            JPanel AddSubjPanel = new JPanel();
-            AddSubjPanel.setLayout(new GridLayout(1, 2));
+            JPanel Button4Panel = new JPanel();
+            Button4Panel.setLayout(new GridLayout(1,2));
+            hamburgerPanel.add(Button4Panel);
 
-            //add
-            JButton buttonAddSubj = new JButton("Add Subject");
-            buttonAdd.setFont(new Font("Arial", Font.PLAIN, 20));
-            AddSubjPanel.add(buttonAdd);
-
-            JTextField textFieldAddSubj = new JTextField("fart", 3);
-            AddSubjPanel.add(textFieldAddSubj);
-
-
-            hamburgerPanel.add(AddSubjPanel);
+            JPanel Button5Panel = new JPanel();
+            Button5Panel.setLayout(new GridLayout(1,2));
+            hamburgerPanel.add(Button5Panel);
 
 
 
+            JButton calcButton = new JButton("calc");
+            Button1Panel.add(calcButton);
 
+            JButton addButton = new JButton("add");
+            Button2Panel.add(addButton);
 
+            JButton editButton = new JButton("edit");
+            Button3Panel.add(editButton);
+
+            JButton addSubButton = new JButton("add subj");
+            Button4Panel.add(addSubButton);
+
+            JButton addTypeButton = new JButton("add type");
+            Button5Panel.add(addTypeButton);
+            
+        
+            
             JPanel AddTypePanel = new JPanel();
             AddTypePanel.setLayout(new BoxLayout(AddTypePanel, 0));
 
