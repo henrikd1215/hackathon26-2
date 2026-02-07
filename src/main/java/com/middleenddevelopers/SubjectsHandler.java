@@ -4,6 +4,8 @@ import java.util.ArrayList;
 public class SubjectsHandler {
     static ArrayList<Subject> subjects = new ArrayList<>();
 
+    public SubjectsHandler() {}
+
     public String[] getSubjectNames() {
         String[] names = new String[subjects.size()];
         for (int i = 0; i < subjects.size(); i++) {

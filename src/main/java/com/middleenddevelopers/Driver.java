@@ -20,8 +20,11 @@ public class Driver {
             subjectsHandler = new SubjectsHandler();
         }
 
+        System.out.print(subjectsHandler.subjects.size());
+        //System.out.print(subjectsHandler.subjects.get(0).name);
 
-        subjectsHandler.subjects.add(new Subject("Test"));
+
+        subjectsHandler.subjects.add(new Subject("Test 2"));
 
 
         AddAssignmentWindow primaryWindow = new AddAssignmentWindow("Homework Time Calculator");

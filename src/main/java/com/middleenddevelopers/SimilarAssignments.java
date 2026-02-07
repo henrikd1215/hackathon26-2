@@ -8,6 +8,11 @@ public class SimilarAssignments {
     public final int id;
     public static int nextId;
 
+    public SimilarAssignments() {
+        id = nextId;
+        nextId++;
+    }
+
     public SimilarAssignments(String name) {
         this.name = name;
 

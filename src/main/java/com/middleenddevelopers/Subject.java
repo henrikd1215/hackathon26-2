@@ -8,6 +8,11 @@ public class Subject {
     public final int id;
     public static int nextId;
 
+    public Subject() {
+        id = nextId;
+        nextId++;
+    }
+
     public Subject(String name) {
         this.name = name;
 
