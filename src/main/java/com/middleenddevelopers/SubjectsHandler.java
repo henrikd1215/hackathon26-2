@@ -41,6 +41,8 @@ public class SubjectsHandler {
         return names;
     }
 
+
+
     public void addAssignment(int subjectIndex, int assignmentTypeIndex, Assignment asgn) {
         subjects.get(subjectIndex).getAssignmentType(assignmentTypeIndex).assignments.add(asgn);
     }
@@ -54,6 +56,8 @@ public class SubjectsHandler {
     public void incompleteAssignment(int subjectIndex, int assignmentTypeIndex, int assignmentIndex) {
         subjects.get(subjectIndex).getAssignment(assignmentTypeIndex, assignmentIndex).isCompleted = false;
     }
+
+
 
     public double calculateAssignmentTime(int subjectIndex, int assignmentTypeIndex, Assignment asgn) {
         return TimeCalculator.calculateTime(asgn, subjects.get(subjectIndex).getAssignmentType(assignmentTypeIndex));
