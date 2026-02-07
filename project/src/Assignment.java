@@ -3,7 +3,7 @@ public class Assignment {
     public Difficulty diff;
     public double time;
     public int questions;
-    
+
     public int id;
     public static int nextId;
 
