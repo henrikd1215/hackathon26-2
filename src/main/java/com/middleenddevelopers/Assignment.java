@@ -1,11 +1,25 @@
 package com.middleenddevelopers;
+
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class Assignment {
+    @JsonProperty("available_books")
     public boolean isCompleted;
+
+    @JsonProperty("time")
+
     public double time;
+
+    @JsonProperty("questions")
     public int questions;
+
+    @JsonProperty("name")
     public String name;
 
+    @JsonProperty("id")
     public final int id;
+
+    @JsonProperty("next_id")
     public static int nextId;
 
     public Assignment() {
@@ -13,7 +27,7 @@ public class Assignment {
         time = 0;
         questions = 0;
         name = "Unnamed";
-        
+
         id = nextId;
         nextId++;
     }

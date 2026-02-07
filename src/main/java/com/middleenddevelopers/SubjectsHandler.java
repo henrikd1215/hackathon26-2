@@ -1,7 +1,10 @@
 package com.middleenddevelopers;
 import java.util.ArrayList;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class SubjectsHandler {
+    @JsonProperty("subjects")
     static ArrayList<Subject> subjects = new ArrayList<>();
 
     public SubjectsHandler() {}
