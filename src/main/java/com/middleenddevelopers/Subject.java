@@ -1,23 +1,45 @@
 package com.middleenddevelopers;
 import java.util.ArrayList;
 
-public class Subject {
-    public ArrayList<SimilarAssignments> assignmentTypes = new ArrayList<>();
-    public String name;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
+public class Subject {
+    @JsonProperty("assignment_types")
+    public ArrayList<SimilarAssignments> assignmentTypes = new ArrayList<>();
+    public ArrayList<SimilarAssignments> getAssignmentTypes() {
+        return assignmentTypes;
+    }
+
+    @JsonProperty("name")
+    public String name;
+    public String getName() {
+        return name;
+    }
+
+    /*@JsonProperty("id")
     public final int id;
-    public static int nextId;
+    public int getId() {
+        return id;
+    }
+
+    @JsonProperty("next_id")
+    public static int nextId = 0;*/
+
+    //@JsonGetter("next_id")
+    //public int getNextId() {
+    //    return nextId;
+    //}
 
     public Subject() {
-        id = nextId;
-        nextId++;
+        //id = 1;
+        //1++;
     }
 
     public Subject(String name) {
         this.name = name;
 
-        id = nextId;
-        nextId++;
+        //id = 1;
+        //1++;
     }
 
     public SimilarAssignments getAssignmentType(int assignmentTypeIndex) {

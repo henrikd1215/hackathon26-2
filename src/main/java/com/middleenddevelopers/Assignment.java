@@ -1,21 +1,52 @@
 package com.middleenddevelopers;
-public class Assignment {
-    public boolean isCompleted;
-    public double time;
-    public int questions;
-    public String name;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+public class Assignment {
+    @JsonProperty("available_books")
+    public boolean isCompleted;
+    public boolean getIsCompleted() {
+        return isCompleted;
+    }
+
+    @JsonProperty("time")
+    public double time;
+    public double getTime() {
+        return time;
+    }
+
+    @JsonProperty("questions")
+    public int questions;
+    public int getQuestions() {
+        return questions;
+    }
+
+    @JsonProperty("name")
+    public String name;
+    public String getName() {
+        return name;
+    }
+
+    /*@JsonProperty("id")
     public final int id;
+    public int getId() {
+        return id;
+    }
+
+    @JsonProperty("next_id")
     public static int nextId;
+    public int getNextId() {
+        return nextId;
+    }*/
 
     public Assignment() {
         isCompleted = false;
         time = 0;
         questions = 0;
         name = "Unnamed";
-        
-        id = nextId;
-        nextId++;
+
+        //id = nextId;
+        //nextId++;
     }
 
     public Assignment(boolean isCompleted, double time, int questions, String name) {
@@ -24,7 +55,7 @@ public class Assignment {
         this.questions = questions;
         this.name = name;
 
-        id = nextId;
-        nextId++;
+        //id = nextId;
+        //nextId++;
     }
 }

@@ -1,17 +1,15 @@
 package com.middleenddevelopers;
 
-import java.io.*;
-import com.fasterxml.jackson.databind.*;
-import com.fasterxml.jackson.core.*;
+import java.io.File;
+
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 public class Driver {
     public static void main(String[] args) {
+//region Read from JSON
         ObjectMapper mapper = new ObjectMapper();
-        mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
-
         File f = new File("Assignments.json");
 
-        //SubjectsHandler subjectsHandler = new SubjectsHandler();
         SubjectsHandler subjectsHandler;
         try {
             subjectsHandler = mapper.readValue(f, SubjectsHandler.class);
@@ -20,11 +18,21 @@ public class Driver {
             subjectsHandler = new SubjectsHandler();
         }
 
-        System.out.print(subjectsHandler.subjects.size());
-        //System.out.print(subjectsHandler.subjects.get(0).name);
+        // This was used to test saving over multiple runs
+        //System.out.print(subjectsHandler.subjects.size());
+        //System.out.print(subjectsHandler.subjects.get(0).name);        
+        //subjectsHandler.subjects.add(new Subject("Test 2"));
+        //System.out.print(subjectsHandler.subjects.size());
+//endregion
 
 
-        subjectsHandler.subjects.add(new Subject("Test 2"));
+        Subject mathSubject = new Subject("Math");
+        SimilarAssignments asgnType = new SimilarAssignments("Problem by problem");
+        Assignment mathAsgn = new Assignment(false, 0, 18, "Homework 3");
+
+        asgnType.assignments.add(mathAsgn);
+        mathSubject.assignmentTypes.add(asgnType);
+        subjectsHandler.subjects.add(mathSubject);
 
 
         AddAssignmentWindow primaryWindow = new AddAssignmentWindow("Homework Time Calculator");
@@ -35,9 +43,12 @@ public class Driver {
 
 
 
+//region Save to JSON
         try {
             mapper.writeValue(f, subjectsHandler);
         } catch (Exception e) {
+            System.out.println(e.getMessage());
         }
     }
+//endregion
 }
