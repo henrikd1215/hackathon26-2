@@ -1,3 +1,4 @@
+package com.middleenddevelopers;
 import java.util.ArrayList;
 
 public class SimilarAssignments {

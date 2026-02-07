@@ -1,4 +1,4 @@
-import javax.swing.*;
+package com.middleenddevelopers;
 
 public class Driver {
     public static void main(String[] args) {

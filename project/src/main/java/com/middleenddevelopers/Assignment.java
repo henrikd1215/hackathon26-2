@@ -1,3 +1,4 @@
+package com.middleenddevelopers;
 public class Assignment {
     public boolean isCompleted;
     public double time;

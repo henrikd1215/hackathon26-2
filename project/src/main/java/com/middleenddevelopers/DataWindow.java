@@ -1,6 +1,9 @@
+package com.middleenddevelopers;
 
-import java.awt.*;
-import javax.swing.*;
+import java.awt.BorderLayout;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
 public class DataWindow extends JFrame {
      public DataWindow(String title) {
             super(title);
